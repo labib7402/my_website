@@ -1,0 +1,172 @@
+/* Blue Theme Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #007bb5;
+    --dark-blue:lightgreen;
+    --light-blue: #e6f4f8;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ☰ Hamburger Button Style */
+.menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--white);
+    order: -1; /* বাম পাশে বাটন রাখার জন্য */
+    margin-right: 15px;
+}
+
+/* Nav Menu Dropdown Style */
+/* লম্বালম্বি সাইডবার ড্রপডাউন (Sidebar Layout) */
+nav {
+    display: none; /* শুরুতে লুকানো থাকবে */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    /* সাইজের পরিবর্তনসমূহ */
+    width: 220px;            /* পুরো স্ক্রিন না নিয়ে বাম পাশে নির্দিষ্ট ২৫০px জায়গা নিবে */
+    height: calc(100vh - 60px); /* স্ক্রিনের ওপর থেকে একদম নিচ পর্যন্ত জায়গা নিবে */
+    
+    background-color: var(--dark-blue);
+    flex-direction: column;
+    text-align: left;
+    padding-top: 10px;
+    box-shadow: 4px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* JS দিয়ে বাটনে চাপ দিলে সাইডবারটি দেখাবে */
+nav.active {
+    display: flex;
+}
+
+/* JavaScript দিয়ে যখন 'active' ক্লাস যোগ হবে তখন মেনু দেখা যাবে */
+nav.active {
+    display: flex;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 25px;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    padding-left: 35px; /* ক্লিক/হোভার করলে সামান্য ডানে সরবে */
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(135deg, var(--dark-blue), #112240);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+}
+
+.highlight {
+    color: #64ffda;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    color: #8892b0;
+    margin: 10px 0 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #005983;
+}
+
+/* Common Section Styles */
+section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--dark-blue);
+}
+
+/* Cards (Skills & Projects) */
+.skills-grid, .projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--white);
+    border-top: 4px solid var(--primary-color);
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+.contact a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 15px;
+    position: relative;
