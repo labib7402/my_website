@@ -7,18 +7,39 @@
 }
 
 :root {
-    --primary-color: #007bb5;
-    --dark-blue:lightgreen;
-    --light-blue: #e6f4f8;
-    --text-color: #333;
-    --white: #ffffff;
+  --primary-color: #0B1F33;
+  --dark-blue: #020817;
+  --light-blue: #132A3E;
+  --text-color: #F8FAFC;
+  --white: #FFFFFF;
+
+  --accent-color: #39FF14;
+  --card-bg: rgba(255, 255, 255, 0.05) ;
+  --border-color: #243B50;
+
 }
 
 body {
-    background-color: #f4f7f6;
-    color: var(--text-color);
-    line-height: 1.6;
+  background-color: var(--dark-blue);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
+.hero-image img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5%;
+
+    border: 3px solid var(--accent-color);
+
+    box-shadow:
+        0 0 15px #39FF14;
+
+    margin-bottom: 25px;
+}
+
 
 /* Header */
 header {
@@ -59,7 +80,7 @@ nav {
     flex-direction: column;
     text-align: left;
     padding-top: 10px;
-    box-shadow: 4px 10px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 10px 15px rgba(14, 13, 13, 0.3)
 }
 
 /* JS দিয়ে বাটনে চাপ দিলে সাইডবারটি দেখাবে */
@@ -88,29 +109,36 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-    height: 80vh;
-    background: linear-gradient(135deg, var(--dark-blue), #112240);
-    color: var(--white);
+    min-height: 80vh;
+    padding: 40px 20px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .hero h1 {
-    font-size: 2.8rem;
-}
-
-.highlight {
-    color: #64ffda;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0 0 15px;
+    line-height: 1.2;
 }
 
 .hero h2 {
-    font-size: 1.5rem;
-    color: #8892b0;
-    margin: 10px 0 20px 0;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .btn {
@@ -147,14 +175,32 @@ section h2 {
     flex-wrap: wrap;
 }
 
+
 .card {
-    background: var(--white);
-    border-top: 4px solid var(--primary-color);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(57, 255, 20, 0.25);
+    border-top: 2px solid rgba(57, 255, 20, 0.6);
+
+    color: #F8FAFC;
     padding: 20px;
     width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 12px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
 }
+
+.card:hover {
+    border-color: #39FF14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+    transform: translateY(-5px);
+}
+
+
+
 
 /* Contact */
 .contact a {
