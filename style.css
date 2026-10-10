@@ -8,8 +8,8 @@
 
 :root {
   --primary-color: #0B1F33;
-  --dark-blue: #020817;
-  --light-blue: #132A3E;
+  --dark-blue:#020817;
+  --light-blue: #020202;
   --text-color: #F8FAFC;
   --white: #FFFFFF;
 
@@ -20,8 +20,8 @@
 }
 
 body {
-  background-color: var(--dark-blue);
-  color: var(--text-color);
+  background-color: var(--light-blue);
+  color:var(--text-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -53,8 +53,11 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 10;
+    opacity: 0.8;
 }
+
+
 
 /* ☰ Hamburger Button Style */
 .menu-toggle {
@@ -96,7 +99,7 @@ nav.active {
 }
 
 nav a {
-    color: var(--white);
+    color:var(--white);
     text-decoration: none;
     padding: 12px 25px;
     display: block;
@@ -154,7 +157,7 @@ nav a:hover {
 }
 
 .btn:hover {
-    background: #005983;
+    background:#30df9c;
 }
 
 /* Common Section Styles */
@@ -202,8 +205,6 @@ section h2 {
 }
 
 
-
-
 /* Contact */
 .contact a {
     color: var(--primary-color);
@@ -219,6 +220,7 @@ footer {
     padding: 15px;
     position: relative;
 }
+
 
 /* সোশ্যাল আইকনগুলোর কন্টেইনার */
 .social-icons {
@@ -241,4 +243,13 @@ footer {
 .social-icons a:hover {
     transform: scale(1.2);
     opacity: 0.8;
+}
+.mainSection{
+    color: white;
+}
+@media (max-width: 425px) {
+    img{
+        width: 100px;
+        height: 100px;
+    }
 }
