@@ -7,8 +7,8 @@
 }
 
 :root {
-  --primary-color: #0B1F33;
-  --dark-blue:#020817;
+  --primary-color:#0f4d04;
+  --dark-blue:--dark-blue;
   --light-blue: #020202;
   --text-color: #F8FAFC;
   --white: #FFFFFF;
@@ -157,7 +157,7 @@ nav a:hover {
 }
 
 .btn:hover {
-    background:#30df9c;
+    border-color: #39FF14;
 }
 
 /* Common Section Styles */
@@ -166,10 +166,14 @@ section {
     text-align: center;
 }
 
-section h2 {
-    font-size: 2rem;
+.bfd{
+    font-size:;
     margin-bottom: 30px;
-    color: var(--dark-blue);
+    color: var(--white);
+}
+
+.highlight{
+    color:#39FF14;
 }
 
 /* Cards (Skills & Projects) */
