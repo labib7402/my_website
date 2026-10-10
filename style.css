@@ -8,14 +8,14 @@
 
 :root {
   --primary-color:#0f4d04;
-  --dark-blue:--dark-blue;
-  --light-blue: #020202;
+  --dark-blue:rgb(0, 0,39);
+  --light-blue:black;
   --text-color: #F8FAFC;
   --white: #FFFFFF;
 
   --accent-color: #39FF14;
   --card-bg: rgba(255, 255, 255, 0.05) ;
-  --border-color: #243B50;
+  --border-color: #03183f;
 
 }
 
