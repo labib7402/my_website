@@ -4,14 +4,12 @@ const mySkills = ["HTML5", "CSS3", "JavaScript (Basic)", "Responsive Design"];
 // ২. প্রজেক্টের Array (পরে নতুন প্রজেক্ট এলে এখানে Object আকারে যোগ করবেন)
 const myProjects = [
     {
-        title: "winter shop bd",
-        description: "প্রজেক্টের বিবরণ পরে লিখবেন।",
+        title: "WINTER SHOP BD",
         src: "https://winter-shop-sjoi.vercel.app/"
     },
     {
         title: "Upcoming Project 2",
         description: "প্রজেক্টের বিবরণ পরে লিখবেন।",
-        src: "https://winter-shop-sjoi.vercel.app/"
     }
 ];
 
@@ -27,7 +25,7 @@ function loadSkills() {
     });
 }
 
-// HTML-এ প্রজেক্টগুলো লোড করার ফাংশন
+// HTML-এ প্রজেক্টগুলো লোড করার ফাংশন ---        description-  <p>${project.description}</p>
 function loadProjects() {
     const projectsContainer = document.getElementById('projects-container');
     const url = "https://winter-shop-sjoi.vercel.app/"
@@ -35,8 +33,7 @@ function loadProjects() {
         const projectCard = document.createElement('div');
         projectCard.className = 'card';
         projectCard.innerHTML = `
-            <h2>{project.title}</h2>
-            <p>${project.description}</p>
+            <h2>${project.title}</h2>
             <a href=${project.src}>My website</a>
         `;
         projectsContainer.appendChild(projectCard);
