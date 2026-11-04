@@ -25,7 +25,7 @@ function loadSkills() {
     });
 }
 
-// HTML-এ প্রজেক্টগুলো লোড করার ফাংশন ---        description-  <p>${project.description}</p>
+// HTML-এ প্রজেক্টগুলো লোড করার ফাংশন
 function loadProjects() {
     const projectsContainer = document.getElementById('projects-container');
     const url = "https://winter-shop-sjoi.vercel.app/"
@@ -45,16 +45,25 @@ window.onload = () => {
     loadSkills();
     loadProjects();
 };
-// Hamburger Menu Toggle Logic
+
+// Hamburger Menu & Close Toggle Logic
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.getElementById('nav-list');
+const menuCloseBtn = document.getElementById('menu-close-btn');
 
-// ৩ দাগের বাটনে ক্লিক করলে মেনু খুলবে/বন্ধ হবে
+// ৩ দাগের বাটনে ক্লিক করলে মেনু খুলবে
 menuToggle.addEventListener('click', () => {
     navList.classList.toggle('active');
 });
 
-// মেনুর যেকোনো লিঙ্কে ক্লিক করলে মেনুটি অটোমেটিক বন্ধ হয়ে যাবে
+// ক্রস (×) বাটনে ক্লিক করলে মেনু বন্ধ হবে
+if (menuCloseBtn) {
+    menuCloseBtn.addEventListener('click', () => {
+        navList.classList.remove('active');
+    });
+}
+
+// মেনুর যেকোনো লিঙ্কে ক্লিক করলে মেনুটি অটোমেটিক বন্ধ হয়ে যাবে
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -62,9 +71,8 @@ navLinks.forEach(link => {
     });
 });
 
-// ডিসপ্লের যেকোনো জায়গায় ক্লিক করলে সাইডবার বন্ধ হওয়ার লজিক
+// ডিসপ্লের যেকোনো জায়গায় ক্লিক করলে সাইডবার বন্ধ হওয়ার লজিক
 window.addEventListener('click', (e) => {
-    // যদি মেনু খোলা থাকে এবং ক্লিক করা জায়গাটি মেনু কিংবা মেনু টগল (☰ বাটন) এর ভেতরে না হয়
     if (navList.classList.contains('active')) {
         if (!navList.contains(e.target) && !menuToggle.contains(e.target)) {
             navList.classList.remove('active');

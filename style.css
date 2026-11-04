@@ -257,3 +257,7 @@ footer {
         height: 100px;
     }
 }
+
+
+.menu-close { display: none; font-size: 2.5rem; color: var(--white); text-align: right; padding: 10px 20px; cursor: pointer; }
+@media (max-width: 768px) { nav.active .menu-close { display: block; } }
