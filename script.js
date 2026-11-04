@@ -46,29 +46,39 @@ window.onload = () => {
     loadProjects();
 };
 
-// Hamburger Menu & Close Toggle Logic
+// Hamburger Menu Toggle Logic
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.getElementById('nav-list');
-const menuCloseBtn = document.getElementById('menu-close-btn');
 
-// ৩ দাগের বাটনে ক্লিক করলে মেনু খুলবে
+// মেনু টগল বাটনে ক্লিক করলে মেনু খুলবে/বন্ধ হবে এবং আইকন বদলাবে
 menuToggle.addEventListener('click', () => {
     navList.classList.toggle('active');
+    
+    // যদি মেনু active থাকে তাহলে ক্রস (×) দেখাবে, নাეთরে থ্রি-ডট (☰) দেখাবে
+    if (navList.classList.contains('active')) {
+        menuToggle.innerHTML = '&times;';
+    } else {
+        menuToggle.innerHTML = '&#9776;';
+    }
 });
 
-// ক্রস (×) বাটনে ক্লিক করলে মেনু বন্ধ হবে
-if (menuCloseBtn) {
-    menuCloseBtn.addEventListener('click', () => {
-        navList.classList.remove('active');
-    });
-}
-
-// মেনুর যেকোনো লিঙ্কে ক্লিক করলে মেনুটি অটোমেটিক বন্ধ হয়ে যাবে
+// মেনুর যেকোনো লিঙ্কে ক্লিক করলে মেনু বন্ধ হয়ে যাবে এবং আইকন ঠিক হয়ে যাবে
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navList.classList.remove('active');
+        menuToggle.innerHTML = '&#9776;';
     });
+});
+
+// ডিসপ্লের যেকোনো জায়গায় ক্লিক করলে সাইডবার বন্ধ হওয়ার লজিক
+window.addEventListener('click', (e) => {
+    if (navList.classList.contains('active')) {
+        if (!navList.contains(e.target) && !menuToggle.contains(e.target)) {
+            navList.classList.remove('active');
+            menuToggle.innerHTML = '&#9776;';
+        }
+    }
 });
 
 // ডিসপ্লের যেকোনো জায়গায় ক্লিক করলে সাইডবার বন্ধ হওয়ার লজিক
