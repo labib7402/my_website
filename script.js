@@ -46,6 +46,7 @@ window.onload = () => {
     loadProjects();
 };
 
+
 // Hamburger Menu Toggle Logic
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.getElementById('nav-list');
@@ -53,13 +54,15 @@ const navList = document.getElementById('nav-list');
 // মেনু টগল বাটনে ক্লিক করলে মেনু খুলবে/বন্ধ হবে এবং আইকন বদলাবে
 menuToggle.addEventListener('click', () => {
     navList.classList.toggle('active');
-    
-    // যদি মেনু active থাকে তাহলে ক্রস (×) দেখাবে, নাეთরে থ্রি-ডট (☰) দেখাবে
-    if (navList.classList.contains('active')) {
-        menuToggle.innerHTML = '&times;';
-    } else {
-        menuToggle.innerHTML = '&#9776;';
-    }
+    menuToggle.classList.toggle('active');
+});
+
+// মেনুর লিঙ্কে ক্লিক করলেও অ্যানিমেশন রিসেট হবে
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuToggle.classList.remove('active');
+    });
 });
 
 // মেনুর যেকোনো লিঙ্কে ক্লিক করলে মেনু বন্ধ হয়ে যাবে এবং আইকন ঠিক হয়ে যাবে

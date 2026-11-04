@@ -234,15 +234,31 @@ footer {
 }
 
 /* ক্লোজ বাটন স্টাইল */
-.menu-close { 
-    display: block; 
-    font-size: 2.5rem; 
-    color: var(--white); 
-    text-align: right; 
-    padding: 10px 20px; 
-    cursor: pointer; 
+.menu-toggle {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    order: -1;
+    margin-right: 15px;
 }
 
-.menu-close:hover {
-    color: #39FF14;
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* অ্যানিমেশন ক্লাস */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    transform: translateY(-11px) rotate(-45deg);
 }
